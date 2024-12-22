@@ -1,1 +1,65 @@
-<a href="cool_header.html">Go to Header Generator (don't use unless you are from SDF!!!)</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Header</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        #output {
+            width: 80%;
+            height: 100px;
+            margin-top: 10px;
+            font-size: 1em;
+            background-color: #f4f4f4;
+            border: 2px solid #000;
+            resize: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Short little home page, with an index to all tool pages, which is in pages_index.html-->
+    <header>
+        <img src="banner.png" alt="Page Banner" style="width:100%; height:auto;">
+    </header>
+    <h1>Welcome to ClanHubUtil</h1>
+    <p>This is the home page for all your clan management tools.</p>
+    <nav>
+        <h1>Generic Tools</h1>
+        <ul>
+            <li><a href="tool1.html">Tool 1</a></li>
+            <li><a href="tool2.html">Tool 2</a></li>
+            <li><a href="tool3.html">Tool 3</a></li>
+        </ul>
+
+        <h1>Faction Specific Tools</h1>
+        <h2>Severossian Defense Front</h2>
+        <img src="sdf_flag.jpg" alt="SDF Flag" style="width:100%; height:auto;">
+        <ul>
+            <li><a href="header_gen.html">SDF Header Generator</a></li>
+        </ul>
+    </nav>
+
+    <h1> Support </h1>
+    <p> If you have any questions or need help, please contact me at <a href="mailto:amir.ghareebdost@gmail.com"></a>
+    </p> Join clanhub discord server <a href="https://discord.gg/gPCgyfwEK4">here</a>
+    <footer>
+        <p>&copy; <span id="year"></span> ClanHubUtil, created by Amir Ghareebdost. Licensed under the Creative Commons Zero v1.0 Universal license.</p>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

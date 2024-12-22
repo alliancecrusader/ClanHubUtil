@@ -1,0 +1,1 @@
+This is a collection of utility things for Clan Hub server. Clan Hub is a geopolitical simulator discord server based around the game Spaceflight Simulator.

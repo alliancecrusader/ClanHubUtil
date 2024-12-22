@@ -11,28 +11,28 @@
             margin: 50px;
         }
 
-        #output {
-            margin-top: 20px;
-            padding: 10px;
-            border: 2px solid #000;
-            display: inline-block;
-            background-color: #f4f4f4;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
         textarea {
             width: 80%;
             height: 100px;
             margin-bottom: 20px;
             font-size: 1em;
         }
+
+        #output {
+            width: 80%;
+            height: 100px;
+            margin-top: 10px;
+            font-size: 1em;
+            background-color: #f4f4f4;
+            border: 2px solid #000;
+            resize: none;
+        }
     </style>
 </head>
 <body>
     <h1>SDF Priority Dispatch</h1>
     <textarea id="input" placeholder="Type your text here..."></textarea>
-    <div id="output" aria-placeholder="output goes here">Output ◣</div>
+    <textarea id="output" readonly aria-placeholder="output goes here"></textarea>
 
     <script>
         function toMathematicalBold(text) {
@@ -54,13 +54,14 @@
                 }
             }).join('');
         }
+
         const inputElement = document.getElementById('input');
         const outputElement = document.getElementById('output');
 
         inputElement.addEventListener('input', () => {
             const userInput = inputElement.value;
             const formattedText = `◢ ${toMathematicalBold(userInput)} ◣`;
-            outputElement.textContent = formattedText;
+            outputElement.value = formattedText;
         });
     </script>
 </body>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 2px solid #000;
+            display: inline-block;
+            background-color: #f4f4f4;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>SDF Priority Dispatch</h1>
+    <textarea id="input" placeholder="Type your text here..."></textarea>
+    <div id="output">◢ 𝐒𝐃𝐅 𝐏𝐫𝐢𝐨𝐫𝐢𝐭𝐲 𝐃𝐢𝐬𝐩𝐚𝐭𝐜𝐡 ◣</div>
+
+    <script>
+        function toMathematicalBold(text) {
+            const offset = {
+                A: 0x1D400, // Uppercase A
+                a: 0x1D41A, // Lowercase a
+                0: 0x1D7CE  // Numbers
+            };
+
+            return text.split('').map(char => {
+                if (char >= 'A' && char <= 'Z') {
+                    return String.fromCodePoint(char.charCodeAt(0) + (offset.A - 'A'.charCodeAt(0)));
+                } else if (char >= 'a' && char <= 'z') {
+                    return String.fromCodePoint(char.charCodeAt(0) + (offset.a - 'a'.charCodeAt(0)));
+                } else if (char >= '0' && char <= '9') {
+                    return String.fromCodePoint(char.charCodeAt(0) + (offset['0'] - '0'.charCodeAt(0)));
+                } else {
+                    return char; // Non-alphanumeric characters remain unchanged
+                }
+            }).join('');
+        }
+        const inputElement = document.getElementById('input');
+        const outputElement = document.getElementById('output');
+
+        inputElement.addEventListener('input', () => {
+            const userInput = inputElement.value;
+            const formattedText = `◢ ${toMathematicalBold(userInput)} ◣`;
+            outputElement.textContent = formattedText;
+        });
+    </script>
+</body>
+</html>
